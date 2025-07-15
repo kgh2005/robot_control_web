@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RO:BIT Humanoid Team</title>
+    <link rel="stylesheet" href="style/inde.css" />
+    <script src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+    <script defer src="script/mian.js"></script>
+</head>
+
+<body>
+    <h1 class="main-title">RO:BIT Humanoid Team</h1>
+
+    <ul>
+        <li>Run a Rosbridge connection at <code>ws://localhost:9090</code></li>
+    </ul>
+
+    <hr />
+
+    <p>Connection: <span id="status" class="bold">N/A</span></p>
+
+
+    <div class="imu-box">
+        <h2>IMU 실시간 데이터</h2>
+
+        <div class="yaw-box">
+            <div class="dial">
+                <div class="pointer" id="yaw-pointer"></div>
+            </div>
+        </div>
+
+
+        <p id="orientation">Roll: ---, Pitch: ---, Yaw: ---</p>
+
+        <div class="button-group">
+            <button onclick="sendTestMessage(-90)">SET -90</button>
+            <button onclick="sendTestMessage(180)">SET 180</button>
+            <button onclick="sendTestMessage(90)">SET +90</button>
+            <button onclick="sendTestMessage(0)">SET YAW</button>
+        </div>
+    </div>
+</body>
+
+</html>

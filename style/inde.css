@@ -1,0 +1,91 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.main-title {
+    color: #800020;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.imu-box {
+    border: 2px solid #800020;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* 모든 자식 요소 가운데 정렬 */
+}
+
+.imu-box h2 {
+    margin-bottom: 10px;
+}
+
+#orientation {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.button-group button {
+    padding: 6px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #999;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.button-group button:hover {
+    background-color: #eee;
+}
+
+.dial-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+
+.dial {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #990033; 
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    background: radial-gradient(circle at 30% 30%, white, #eee);
+}
+
+.pointer {
+    width: 6px;
+    height: 80px;
+    background: #333;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    border-radius: 3px;
+    transition: transform 0.2s ease;
+}

@@ -48,11 +48,29 @@
 
     </div>
 
-    <div class="yolo">
-        <h2>YOLO 실시간</h2>
-        <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
-    </div>
+    <div class="flex-container">
+        <div class="yolo">
+            <h2>YOLO 실시간</h2>
+            <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
+            <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+        </div>
 
+        <!-- <div class="localization">
+            <h2>localization</h2>
+            <img id="fieldImage" src="assets/RoboCup_Field.png" style="max-width: 550px; height: auto;"/>
+        </div> -->
+        <div class="localization">
+            <h2>Localization</h2>
+
+            <div class="map-wrapper">
+                <img id="fieldImage" src="assets/RoboCup_Field.png" width="550" height="400" />
+                <canvas id="fieldCanvas" width="550" height="400"></canvas>
+            </div>
+
+        </div>
+
+
+    </div>
 </body>
 
 </html>

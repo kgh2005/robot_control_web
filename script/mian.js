@@ -28,7 +28,7 @@ imuListener.subscribe((message) => {
     // HTML 요소에 표시
     document.getElementById("orientation").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
-    
+
     updateYawDial(yaw);
 });
 
@@ -40,7 +40,6 @@ function updateYawDial(yaw) {
     pointer.style.transform = `rotate(${angle}deg)`;
 }
 
-
 function sendTestMessage(setValue) {
     console.log("버튼이 눌렸습니다! Set =", setValue);
 
@@ -51,9 +50,34 @@ function sendTestMessage(setValue) {
     });
 
     const msg = new ROSLIB.Message({
-        set: setValue 
+        set: setValue
     });
 
     publisher.publish(msg);
 }
+
+window.onload = function () {
+    const img = document.getElementById("fieldImage");
+    const canvas = document.getElementById("fieldCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function drawCenterDot() {
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        const centerX = 275;
+        const centerY = 200;
+
+        ctx.fillStyle = "blue";
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, 10, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    if (img.complete) {
+        drawCenterDot(); // 이미지 이미 로드된 경우 바로 실행
+    } else {
+        img.onload = drawCenterDot; // 아니라면 onload에 등록
+    }
+};
 

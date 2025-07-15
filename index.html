@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RO:BIT Humanoid Team</title>
+    <link rel="icon" type="image/png" href="assets/kw_logo.png">
     <link rel="stylesheet" href="style/inde.css" />
     <script src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
     <script defer src="script/mian.js"></script>
@@ -35,12 +36,23 @@
         <p id="orientation">Roll: ---, Pitch: ---, Yaw: ---</p>
 
         <div class="button-group">
-            <button onclick="sendTestMessage(-90)">SET -90</button>
-            <button onclick="sendTestMessage(180)">SET 180</button>
-            <button onclick="sendTestMessage(90)">SET +90</button>
-            <button onclick="sendTestMessage(0)">SET YAW</button>
+            <div class="button-row">
+                <button onclick="sendTestMessage(0)">SET Yaw</button>
+            </div>
+            <div class="button-row">
+                <button onclick="sendTestMessage(-90)">SET -90</button>
+                <button onclick="sendTestMessage(180)">SET 180</button>
+                <button onclick="sendTestMessage(90)">SET +90</button>
+            </div>
         </div>
+
     </div>
+
+    <div class="yolo">
+        <h2>YOLO 실시간</h2>
+        <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+    </div>
+
 </body>
 
 </html>

@@ -1,12 +1,14 @@
 body {
     font-family: sans-serif;
-    padding: 20px;
+    padding: 10px;
+    margin: 5px;
     background-color: #f9f9f9;
 }
 
 .main-title {
     color: #800020;
     text-align: center;
+    margin: 0px;
 }
 
 .bold {
@@ -17,10 +19,84 @@ ul {
     padding-left: 20px;
 }
 
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #f8f8f8;
+    z-index: 1000;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.tabs {
+    display: flex;
+    justify-content: left;
+    margin: 0px 0;
+    gap: 20px;
+}
+
+.tab {
+    background-color: #ffffff;
+    color: #800020;
+    border: 2px solid #800020;
+    border-radius: 12px;
+    padding: 10px 18px;
+    margin: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #800020;
+    color: #ffffff;
+}
+
+.tab.active {
+    background-color: #800020;
+    color: white;
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+
+.DI-map-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DI-localization {
+    border: 2px solid #800020;
+    border-radius: 10px;
+    padding:0px;
+    max-width: 700px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+
+/* #fieldImage {
+    display: block;
+}
+
+#fieldCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+} */
+
 .imu-box {
     border: 2px solid #800020;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     max-width: 400px;
     background-color: #f9f9f9;
     margin: 20px auto;
@@ -29,7 +105,7 @@ ul {
 }
 
 .imu-box h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 #orientation {
@@ -140,4 +216,18 @@ ul {
     top: 0;
     left: 0;
     pointer-events: none;
+}
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #777;
+    font-size: 0.9em;
+    padding: 8px 0;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
 }

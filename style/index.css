@@ -8,7 +8,8 @@ body {
 .main-title {
     color: #800020;
     text-align: center;
-    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 .bold {
@@ -205,6 +206,9 @@ ul {
     background-color: #f9f9f9;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+.localization h2 {
+    margin-bottom: 0px;
 }
 
 #fieldImage {

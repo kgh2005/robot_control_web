@@ -13,28 +13,10 @@ ros.on("close", () => {
 });
 
 // ROS 토픽 구독 설정
-const imuListener = new ROSLIB.Topic({
+const robot1Listener = new ROSLIB.Topic({
     ros,
-    name: "/Imu",
-    messageType: "humanoid_interfaces/ImuMsg",
-});
-
-imuListener.subscribe((message) => {
-    const pitch = message.pitch;
-    const roll = message.roll;
-    const yaw = message.yaw;
-
-    document.getElementById("orientation").innerText =
-        `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
-
-    updateYawDial(yaw);
-    updateYawOnCanvas(yaw + 90);  // 필요시 yaw 보정
-});
-
-const localizationListener = new ROSLIB.Topic({
-    ros,
-    name: "/localization",
-    messageType: "humanoid_interfaces/Robocuplocalization25",
+    name: "/robot1receiver",
+    messageType: "humanoid_interfaces/Robot1receiverMsg",
 });
 
 let robotX = 275;
@@ -43,13 +25,23 @@ let ballX = 0;
 let ballY = 0;
 let currentYaw = 0;
 
-localizationListener.subscribe((message) => {
+robot1Listener.subscribe((message) => {
+    const pitch = message.pitch;
+    const roll = message.roll;
+    const yaw = message.yaw;
+
     robotX = message.robot_x * 0.5;
     robotY = message.robot_y * 0.5;
     ballX = message.ball_x * 0.5;
     ballY = message.ball_y * 0.5;
 
     draw();
+
+    document.getElementById("orientation").innerText =
+        `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
+    
+    updateYawDial(yaw);
+    updateYawOnCanvas(yaw + 90);
 });
 
 function updateYawDial(yaw) {
@@ -64,8 +56,8 @@ function updateYawDial(yaw) {
 function sendTestMessage(setValue) {
     const publisher = new ROSLIB.Topic({
         ros: ros,
-        name: "/Imuflag",
-        messageType: "humanoid_interfaces/ImuflagMsg"
+        name: "/robot1sender",
+        messageType: "humanoid_interfaces/Robot1senderMsg"
     });
 
     const msg = new ROSLIB.Message({ set: setValue });
@@ -115,8 +107,13 @@ function updateYawOnCanvas(yawDeg) {
 }
 
 window.onload = function () {
-    img = document.getElementById("fieldImage");
-    canvas = document.getElementById("fieldCanvas");
+    // 탭 초기화
+    const defaultTab = document.querySelector('.tab[href="#"][onclick*="robot1"]');
+    showTab('robot1', defaultTab);
+
+    // 캔버스 및 이미지 초기화
+    img = document.getElementById("fieldImage1");
+    canvas = document.getElementById("fieldCanvas1");
     ctx = canvas.getContext("2d");
 
     if (img.complete) {
@@ -132,6 +129,7 @@ window.onload = function () {
     }
 };
 
+
 function showTab(tabId, element) {
     // 탭 콘텐츠 숨기기
     const contents = document.querySelectorAll('.tab-content');
@@ -145,9 +143,3 @@ function showTab(tabId, element) {
     document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
     if (element) element.classList.add('active');
 }
-
-// 페이지 로딩 시 기본 탭
-window.onload = function () {
-    const defaultTab = document.querySelector('.tab[href="#"][onclick*="robot1"]');
-    showTab('robot1', defaultTab);
-};

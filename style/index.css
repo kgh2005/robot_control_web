@@ -82,8 +82,7 @@ ul {
     margin: 0 auto; /* 중앙 정렬 */
 }
 
-
-/* #fieldImage {
+#fieldImage {
     display: block;
 }
 
@@ -92,15 +91,23 @@ ul {
     top: 0;
     left: 0;
     pointer-events: none;
-} */
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
 
 .imu-box {
     border: 2px solid #800020;
     border-radius: 10px;
-    padding: 15px;
+    padding: 25px;
     max-width: 400px;
     background-color: #f9f9f9;
-    margin: 20px auto;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -110,7 +117,7 @@ ul {
 }
 
 #orientation {
-    margin: 10px 0;
+    margin: 20px 0;
     font-size: 16px;
 }
 
@@ -119,7 +126,7 @@ ul {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .button-row {
@@ -174,15 +181,6 @@ ul {
     transition: transform 0.2s ease;
 }
 
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
 .yolo {
     border: 2px solid #800020;
     border-radius: 10px;
@@ -201,7 +199,7 @@ ul {
 .localization {
     border: 2px solid #800020;
     border-radius: 10px;
-    padding: 0px;
+    padding: 5px;
     max-width: 700px;
     background-color: #f9f9f9;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -211,11 +209,11 @@ ul {
     margin-bottom: 0px;
 }
 
-#fieldImage {
+#fieldImage1 {
     display: block;
 }
 
-#fieldCanvas {
+#fieldCanvas1 {
     position: absolute;
     top: 0;
     left: 0;

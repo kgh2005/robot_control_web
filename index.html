@@ -38,32 +38,30 @@
         </div>
     </div>
     <div id="robot1" class="tab-content">
-        <div class="imu-box">
-            <h2>IMU 실시간 데이터</h2>
-
-            <div class="yaw-box">
-                <div class="dial">
-                    <div class="pointer" id="yaw-pointer"></div>
-                </div>
-            </div>
-
-
-            <p id="orientation">Roll: ---, Pitch: ---, Yaw: ---</p>
-
-            <div class="button-group">
-                <div class="button-row">
-                    <button onclick="sendTestMessage(0)">SET Yaw</button>
-                </div>
-                <div class="button-row">
-                    <button onclick="sendTestMessage(-90)">SET -90</button>
-                    <button onclick="sendTestMessage(180)">SET 180</button>
-                    <button onclick="sendTestMessage(90)">SET +90</button>
-                </div>
-            </div>
-
-        </div>
-
         <div class="flex-container">
+            <div class="imu-box">
+                <h2>IMU 실시간 데이터</h2>
+
+                <div class="yaw-box">
+                    <div class="dial">
+                        <div class="pointer" id="yaw-pointer"></div>
+                    </div>
+                </div>
+
+
+                <p id="orientation">Roll: ---, Pitch: ---, Yaw: ---</p>
+
+                <div class="button-group">
+                    <div class="button-row">
+                        <button onclick="sendTestMessage(0)">SET Yaw</button>
+                    </div>
+                    <div class="button-row">
+                        <button onclick="sendTestMessage(-90)">SET -90</button>
+                        <button onclick="sendTestMessage(180)">SET 180</button>
+                        <button onclick="sendTestMessage(90)">SET +90</button>
+                    </div>
+                </div>
+            </div>
             <div class="yolo">
                 <h2>YOLO 실시간</h2>
                 <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
@@ -77,8 +75,8 @@
             <div class="localization">
                 <h2>Localization</h2>
                 <div class="map-wrapper">
-                    <img id="fieldImage" src="assets/RoboCup_Field.png" width="550" height="400" />
-                    <canvas id="fieldCanvas" width="550" height="400"></canvas>
+                    <img id="fieldImage1" src="assets/RoboCup_Field.png" width="550" height="400" />
+                    <canvas id="fieldCanvas1" width="550" height="400"></canvas>
                 </div>
             </div>
         </div>

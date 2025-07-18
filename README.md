@@ -1,6 +1,17 @@
 # RO:BIT Web Interface for Robot Visualization & Control
 
-This project provides a web-based interface for visualizing and controlling a ROS 2 robot. It is designed to work with **ROS 2 Humble** on **Ubuntu 22.04**, and communicates via the `rosbridge_websocket` interface.
+This project provides a **web-based interface** for interacting with multiple ROS 2 robots.  
+It uses the `rosbridge_websocket` interface for communication and is designed with scalability and extensibility in mind.
+
+> ✅ Designed for **ROS 2 Humble** on **Ubuntu 22.04**
+
+---
+
+## 🔗 GitHub Repository
+
+➡️ **[https://github.com/kgh2005/web_control_bridge.git](https://github.com/kgh2005/web_control_bridge.git)**
+
+This repository contains the full ROS 2 package and web interface source code for enabling web-based control and visualization across multiple robots in real-time.
 
 ---
 
@@ -9,7 +20,7 @@ This project provides a web-based interface for visualizing and controlling a RO
 - **Ubuntu 22.04**
 - **ROS 2 Humble**
 - **rosbridge_server**
-- **roslibjs (JavaScript library for ROS)**
+- **roslibjs** (JavaScript library for ROS)
 - **web_video_server**
 - **VSCode Live Server** (or any HTTP server)
 
@@ -38,21 +49,3 @@ ros2 run web_video_server web_video_server
 # - Open this project folder in VSCode
 # - Open index.html
 # - Right-click and select "Open with Live Server"
-```
-
-## YOLO Detection Result Image Publisher (ROS2)
-```bash
-#include <cv_bridge/cv_bridge.h>
-#include <sensor_msgs/msg/image.hpp>
-
-// 퍼블리셔 선언 (class 안에서)
-rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr image_pub_;
-
-// 노드 생성자 등에서 퍼블리셔 초기화
-image_pub_ = this->create_publisher<sensor_msgs::msg::Image>("/yolo/image", 10);
-
-// YOLO 결과 그린 후 이미지 전송
-auto output_msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", bgr_image).toImageMsg();
-output_msg->header.stamp = rclcpp::Clock().now();
-image_pub_->publish(*output_msg);
-```

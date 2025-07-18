@@ -63,14 +63,6 @@ ul {
     margin-top: 20px;
 }
 
-
-.DI-map-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .DI-localization {
     border: 2px solid #800020;
     border-radius: 10px;
@@ -116,22 +108,7 @@ ul {
     margin-bottom: 5px;
 }
 
-#orientation1 {
-    margin: 20px 0;
-    font-size: 16px;
-}
-
-#orientation2 {
-    margin: 20px 0;
-    font-size: 16px;
-}
-
-#orientation3 {
-    margin: 20px 0;
-    font-size: 16px;
-}
-
-#orientation4 {
+#orientation1, #orientation2, #orientation3, #orientation4 {
     margin: 20px 0;
     font-size: 16px;
 }
@@ -224,41 +201,12 @@ ul {
     margin-bottom: 0px;
 }
 
-#fieldImage1 {
-    display: block;
-}
-
-#fieldImage2 {
-    display: block;
-}
-
-#fieldImage3 {
+#fieldImage1, #fieldImage2, #fieldImage3, #fieldImage4 {
     display: block;
 }
 
 
-#fieldCanvas1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
-
-#fieldCanvas2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
-
-#fieldCanvas3 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
-
-#fieldCanvas4 {
+#fieldCanvas1, #fieldCanvas2, #fieldCanvas3, #fieldCanvas4 {
     position: absolute;
     top: 0;
     left: 0;

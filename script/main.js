@@ -12,6 +12,8 @@ ros.on("close", () => {
     document.getElementById("status").innerText = "closed";
 });
 
+let robot1 = 0, robot2 = 0, robot3 = 0, robot4 = 0;
+let tab_Id = '';
 // ============================================================
 // 1번 로봇 관련 코드
 // ============================================================
@@ -29,6 +31,7 @@ let ballY_1 = 0;
 let currentYaw_1 = 0;
 
 robot1Listener.subscribe((message) => {
+    robot1 = message.robot1;
     const pitch = message.pitch;
     const roll = message.roll;
     const yaw = message.yaw;
@@ -38,7 +41,12 @@ robot1Listener.subscribe((message) => {
     ballX_1 = message.ball_x * 0.5;
     ballY_1 = message.ball_y * 0.5;
 
-    draw1();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot1') {
+        draw1();
+    }
 
     document.getElementById("orientation1").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
@@ -53,7 +61,12 @@ function updateYawDial1(yaw) {
     pointer.style.transform = `rotate(${angle}deg)`;
 
     currentYaw_1 = yaw;
-    draw1();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot1') {
+        draw1();
+    }
 }
 
 function sendTestMessage1(setValue) {
@@ -79,7 +92,12 @@ function draw1() {
 // 외부에서 yaw 업데이트 시 draw() 호출
 function updateYawOnCanvas1(yawDeg) {
     currentYaw_1 = yawDeg;
-    draw1();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot1') {
+        draw1();
+    }
 }
 // ============================================================
 
@@ -100,6 +118,7 @@ let ballY_2 = 0;
 let currentYaw_2 = 0;
 
 robot2Listener.subscribe((message) => {
+    robot2 = message.robot2;
     const pitch = message.pitch;
     const roll = message.roll;
     const yaw = message.yaw;
@@ -109,7 +128,12 @@ robot2Listener.subscribe((message) => {
     ballX_2 = message.ball_x * 0.5;
     ballY_2 = message.ball_y * 0.5;
 
-    draw2();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot2') {
+        draw2();
+    }
 
     document.getElementById("orientation2").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
@@ -124,7 +148,12 @@ function updateYawDial2(yaw) {
     pointer.style.transform = `rotate(${angle}deg)`;
 
     currentYaw_2 = yaw;
-    draw2();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot2') {
+        draw2();
+    }
 }
 
 function sendTestMessage2(setValue) {
@@ -150,7 +179,12 @@ function draw2() {
 // 외부에서 yaw 업데이트 시 draw() 호출
 function updateYawOnCanvas2(yawDeg) {
     currentYaw_2 = yawDeg;
-    draw2();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot2') {
+        draw2();
+    }
 }
 // ============================================================
 
@@ -171,6 +205,7 @@ let ballY_3 = 0;
 let currentYaw_3 = 0;
 
 robot3Listener.subscribe((message) => {
+    robot3 = message.robot3;
     const pitch = message.pitch;
     const roll = message.roll;
     const yaw = message.yaw;
@@ -180,7 +215,12 @@ robot3Listener.subscribe((message) => {
     ballX_3 = message.ball_x * 0.5;
     ballY_3 = message.ball_y * 0.5;
 
-    draw3();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot3') {
+        draw3();
+    }
 
     document.getElementById("orientation3").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
@@ -195,7 +235,12 @@ function updateYawDial3(yaw) {
     pointer.style.transform = `rotate(${angle}deg)`;
 
     currentYaw_3 = yaw;
-    draw3();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot3') {
+        draw3();
+    }
 }
 
 function sendTestMessage3(setValue) {
@@ -221,7 +266,12 @@ function draw3() {
 // 외부에서 yaw 업데이트 시 draw() 호출
 function updateYawOnCanvas3(yawDeg) {
     currentYaw_3 = yawDeg;
-    draw3();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot3') {
+        draw3();
+    }
 }
 // ============================================================
 
@@ -242,6 +292,7 @@ let ballY_4 = 0;
 let currentYaw_4 = 0;
 
 robot4Listener.subscribe((message) => {
+    robot4 = message.robot4;
     const pitch = message.pitch;
     const roll = message.roll;
     const yaw = message.yaw;
@@ -251,7 +302,12 @@ robot4Listener.subscribe((message) => {
     ballX_4 = message.ball_x * 0.5;
     ballY_4 = message.ball_y * 0.5;
 
-    draw4();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot4') {
+        draw4();
+    }
 
     document.getElementById("orientation4").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
@@ -266,7 +322,12 @@ function updateYawDial4(yaw) {
     pointer.style.transform = `rotate(${angle}deg)`;
 
     currentYaw_4 = yaw;
-    draw4();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot4') {
+        draw4();
+    }
 }
 
 function sendTestMessage4(setValue) {
@@ -292,13 +353,82 @@ function draw4() {
 // 외부에서 yaw 업데이트 시 draw() 호출
 function updateYawOnCanvas4(yawDeg) {
     currentYaw_4 = yawDeg;
-    draw4();
+    if (tab_Id === 'Data-Integration') {
+        draw();
+    }
+    if (tab_Id === 'robot4') {
+        draw4();
+    }
 }
 // ============================================================
 
 // ============================================================
 // 공통 함수
 // ============================================================
+
+// 캔버스 관련 변수
+let ctx, img, canvas
+
+const arrowLength = 15;
+
+let colors = "";
+
+function draw() {
+    if (!ctx || !img) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    if (robot1 != 0) {
+        colors = "blue";
+        drawData(ctx, img, robotX_1, robotY_1, currentYaw_1, ballX_1, ballY_1, arrowLength, colors);
+    }
+    if (robot2 != 0) {
+        colors = "green";
+        drawData(ctx, img, robotX_2, robotY_2, currentYaw_2, ballX_2, ballY_2, arrowLength, colors);
+    }
+    if (robot3 != 0) {
+        colors = "orange";
+        drawData(ctx, img, robotX_3, robotY_3, currentYaw_3, ballX_3, ballY_3, arrowLength, colors);
+    }
+    if (robot4 != 0) {
+        colors = "purple";
+        drawData(ctx, img, robotX_4, robotY_4, currentYaw_4, ballX_4, ballY_4, arrowLength, colors);
+    }
+}
+
+function drawData(ctx, img, robotX, robotY, yawDeg, ballX, ballY, arrowLength, color) {
+    if (!ctx || !img) return;
+
+    // 로봇 위치
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(robotX, robotY, 10, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.strokeStyle = "black";  // 테두리 색상
+    ctx.lineWidth = 2;          // 테두리 두께
+    ctx.stroke();               // 테두리 그리기
+
+    const yawRad = yawDeg * Math.PI / 180;
+    const endX = robotX + arrowLength * Math.cos(yawRad);
+    const endY = robotY - arrowLength * Math.sin(yawRad);
+
+    // 방향선
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(robotX, robotY);
+    ctx.lineTo(endX, endY);
+    ctx.stroke();
+
+    // 공 위치
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(ballX, ballY, 4, 0, Math.PI * 2);
+    ctx.fill();
+}
+
 function drawRobot(ctx, img, robotX, robotY, yawDeg, ballX, ballY, arrowLength) {
     if (!ctx || !img) return;
 
@@ -333,6 +463,10 @@ window.onload = function () {
     showTab('robot1', defaultTab);
 
     // 캔버스 및 이미지 초기화
+    img = document.getElementById("fieldImage");
+    canvas = document.getElementById("fieldCanvas");
+    ctx = canvas.getContext("2d");
+
     img1 = document.getElementById("fieldImage1");
     canvas1 = document.getElementById("fieldCanvas1");
     ctx1 = canvas1.getContext("2d");
@@ -349,63 +483,113 @@ window.onload = function () {
     canvas4 = document.getElementById("fieldCanvas4");
     ctx4 = canvas4.getContext("2d");
 
-    if (img1.complete) 
-    {
+    if (img.complete) {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        if (tab_Id === 'Data-Integration') {
+            draw();
+        }
+    }
+    else {
+        img.onload = () => {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            if (tab_Id === 'Data-Integration') {
+                draw();
+            }
+        };
+    }
+
+    if (img1.complete) {
         canvas1.width = img1.width;
         canvas1.height = img1.height;
-        draw1();
-    } 
-    else 
-    {
+        if (tab_Id === 'Data-Integration') {
+            draw();
+        }
+        if (tab_Id === 'robot1') {
+            draw1();
+        }
+    }
+    else {
         img1.onload = () => {
             canvas1.width = img1.width;
             canvas1.height = img1.height;
-            draw1();
+            if (tab_Id === 'Data-Integration') {
+                draw();
+            }
+            if (tab_Id === 'robot1') {
+                draw1();
+            }
         };
     }
 
-    if (img2.complete) 
-    {
+    if (img2.complete) {
         canvas2.width = img2.width;
         canvas2.height = img2.height;
-        draw2();
+        if (tab_Id === 'Data-Integration') {
+            draw();
+        }
+        if (tab_Id === 'robot2') {
+            draw2();
+        }
     }
-    else 
-    {
+    else {
         img2.onload = () => {
             canvas2.width = img2.width;
             canvas2.height = img2.height;
-            draw2();
+            if (tab_Id === 'Data-Integration') {
+                draw();
+            }
+            if (tab_Id === 'robot2') {
+                draw2();
+            }
         };
     }
 
-    if (img3.complete) 
-    {
+    if (img3.complete) {
         canvas3.width = img3.width;
         canvas3.height = img3.height;
-        draw3();
-    } 
-    else 
-    {
+        draw();
+        if (tab_Id === 'Data-Integration') {
+            draw();
+        }
+        if (tab_Id === 'robot3') {
+            draw3();
+        }
+    }
+    else {
         img3.onload = () => {
             canvas3.width = img3.width;
             canvas3.height = img3.height;
-            draw3();
+            if (tab_Id === 'Data-Integration') {
+                draw();
+            }
+            if (tab_Id === 'robot3') {
+                draw3();
+            }
         };
     }
 
-    if (img4.complete) 
-    {
+    if (img4.complete) {
         canvas4.width = img4.width;
         canvas4.height = img4.height;
-        draw4();
-    } 
-    else 
-    {
+        if (tab_Id === 'Data-Integration') {
+            draw();
+        }
+        if (tab_Id === 'robot4') {
+            draw4();
+        }
+    }
+    else {
         img4.onload = () => {
             canvas4.width = img4.width;
             canvas4.height = img4.height;
-            draw4();
+            if (tab_Id === 'Data-Integration') {
+                draw();
+            }
+            if (tab_Id === 'robot4') {
+                draw4();
+            }
         };
     }
 };
@@ -422,6 +606,8 @@ function showTab(tabId, element) {
     // 버튼 스타일 업데이트
     document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
     if (element) element.classList.add('active');
+
+    tab_Id = tabId; // 현재 탭 ID 저장
 }
 
 // ============================================================

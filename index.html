@@ -28,6 +28,8 @@
             <a href="#" class="tab" onclick="showTab('robot4', this)">robot4</a>
         </div>
     </div>
+
+    <!-- 통합 -->
     <div id="Data-Integration" class="tab-content">
         <div class="DI-localization">
             <h2>Localization</h2>
@@ -37,6 +39,8 @@
             </div>
         </div>
     </div>
+
+    <!-- 1 번 로봇 -->
     <div id="robot1" class="tab-content">
         <div class="flex-container">
             <div class="imu-box">
@@ -82,6 +86,7 @@
         </div>
     </div>
 
+    <!-- 2 번 로봇 -->
     <div id="robot2" class="tab-content" style="display: none;">
         <div class="flex-container">
             <div class="imu-box">
@@ -127,11 +132,96 @@
         </div>
     </div>
 
+    <!-- 3번 로봇 -->
     <div id="robot3" class="tab-content" style="display: none;">
-        <h2>robot3</h2>
+        <div class="flex-container">
+            <div class="imu-box">
+                <h2>IMU 실시간 데이터</h2>
+
+                <div class="yaw-box">
+                    <div class="dial">
+                        <div class="pointer" id="yaw-pointer3"></div>
+                    </div>
+                </div>
+
+
+                <p id="orientation3">Roll: ---, Pitch: ---, Yaw: ---</p>
+
+                <div class="button-group">
+                    <div class="button-row">
+                        <button onclick="sendTestMessage3(0)">SET Yaw</button>
+                    </div>
+                    <div class="button-row">
+                        <button onclick="sendTestMessage3(-90)">SET -90</button>
+                        <button onclick="sendTestMessage3(180)">SET 180</button>
+                        <button onclick="sendTestMessage3(90)">SET +90</button>
+                    </div>
+                </div>
+            </div>
+            <div class="yolo">
+                <h2>YOLO 실시간</h2>
+                <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
+                <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+            </div>
+
+            <!-- <div class="localization">
+            <h2>localization</h2>
+            <img id="fieldImage" src="assets/RoboCup_Field.png" style="max-width: 550px; height: auto;"/>
+        </div> -->
+            <div class="localization">
+                <h2>Localization</h2>
+                <div class="map-wrapper">
+                    <img id="fieldImage3" src="assets/RoboCup_Field.png" width="550" height="400" />
+                    <canvas id="fieldCanvas3" width="550" height="400"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- 4번 로봇 -->
     <div id="robot4" class="tab-content" style="display: none;">
-        <h2>robot4</h2>
+        <div class="flex-container">
+            <div class="imu-box">
+                <h2>IMU 실시간 데이터</h2>
+
+                <div class="yaw-box">
+                    <div class="dial">
+                        <div class="pointer" id="yaw-pointer4"></div>
+                    </div>
+                </div>
+
+
+                <p id="orientation4">Roll: ---, Pitch: ---, Yaw: ---</p>
+
+                <div class="button-group">
+                    <div class="button-row">
+                        <button onclick="sendTestMessage4(0)">SET Yaw</button>
+                    </div>
+                    <div class="button-row">
+                        <button onclick="sendTestMessage4(-90)">SET -90</button>
+                        <button onclick="sendTestMessage4(180)">SET 180</button>
+                        <button onclick="sendTestMessage4(90)">SET +90</button>
+                    </div>
+                </div>
+            </div>
+            <div class="yolo">
+                <h2>YOLO 실시간</h2>
+                <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
+                <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+            </div>
+
+            <!-- <div class="localization">
+            <h2>localization</h2>
+            <img id="fieldImage" src="assets/RoboCup_Field.png" style="max-width: 550px; height: auto;"/>
+        </div> -->
+            <div class="localization">
+                <h2>Localization</h2>
+                <div class="map-wrapper">
+                    <img id="fieldImage4" src="assets/RoboCup_Field.png" width="550" height="400" />
+                    <canvas id="fieldCanvas4" width="550" height="400"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="site-footer">

@@ -126,6 +126,16 @@ ul {
     font-size: 16px;
 }
 
+#orientation3 {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+#orientation4 {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
 .button-group {
     display: flex;
     flex-direction: column;
@@ -222,6 +232,11 @@ ul {
     display: block;
 }
 
+#fieldImage3 {
+    display: block;
+}
+
+
 #fieldCanvas1 {
     position: absolute;
     top: 0;
@@ -230,6 +245,20 @@ ul {
 }
 
 #fieldCanvas2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+#fieldCanvas3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+#fieldCanvas4 {
     position: absolute;
     top: 0;
     left: 0;

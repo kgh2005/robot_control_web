@@ -116,7 +116,12 @@ ul {
     margin-bottom: 5px;
 }
 
-#orientation {
+#orientation1 {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+#orientation2 {
     margin: 20px 0;
     font-size: 16px;
 }
@@ -213,7 +218,18 @@ ul {
     display: block;
 }
 
+#fieldImage2 {
+    display: block;
+}
+
 #fieldCanvas1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+#fieldCanvas2 {
     position: absolute;
     top: 0;
     left: 0;

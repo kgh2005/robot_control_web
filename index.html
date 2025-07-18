@@ -44,21 +44,21 @@
 
                 <div class="yaw-box">
                     <div class="dial">
-                        <div class="pointer" id="yaw-pointer"></div>
+                        <div class="pointer" id="yaw-pointer1"></div>
                     </div>
                 </div>
 
 
-                <p id="orientation">Roll: ---, Pitch: ---, Yaw: ---</p>
+                <p id="orientation1">Roll: ---, Pitch: ---, Yaw: ---</p>
 
                 <div class="button-group">
                     <div class="button-row">
-                        <button onclick="sendTestMessage(0)">SET Yaw</button>
+                        <button onclick="sendTestMessage1(0)">SET Yaw</button>
                     </div>
                     <div class="button-row">
-                        <button onclick="sendTestMessage(-90)">SET -90</button>
-                        <button onclick="sendTestMessage(180)">SET 180</button>
-                        <button onclick="sendTestMessage(90)">SET +90</button>
+                        <button onclick="sendTestMessage1(-90)">SET -90</button>
+                        <button onclick="sendTestMessage1(180)">SET 180</button>
+                        <button onclick="sendTestMessage1(90)">SET +90</button>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,48 @@
     </div>
 
     <div id="robot2" class="tab-content" style="display: none;">
-        <h2>robot2</h2>
+        <div class="flex-container">
+            <div class="imu-box">
+                <h2>IMU 실시간 데이터</h2>
+
+                <div class="yaw-box">
+                    <div class="dial">
+                        <div class="pointer" id="yaw-pointer2"></div>
+                    </div>
+                </div>
+
+
+                <p id="orientation2">Roll: ---, Pitch: ---, Yaw: ---</p>
+
+                <div class="button-group">
+                    <div class="button-row">
+                        <button onclick="sendTestMessage2(0)">SET Yaw</button>
+                    </div>
+                    <div class="button-row">
+                        <button onclick="sendTestMessage2(-90)">SET -90</button>
+                        <button onclick="sendTestMessage2(180)">SET 180</button>
+                        <button onclick="sendTestMessage2(90)">SET +90</button>
+                    </div>
+                </div>
+            </div>
+            <div class="yolo">
+                <h2>YOLO 실시간</h2>
+                <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
+                <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+            </div>
+
+            <!-- <div class="localization">
+            <h2>localization</h2>
+            <img id="fieldImage" src="assets/RoboCup_Field.png" style="max-width: 550px; height: auto;"/>
+        </div> -->
+            <div class="localization">
+                <h2>Localization</h2>
+                <div class="map-wrapper">
+                    <img id="fieldImage2" src="assets/RoboCup_Field.png" width="550" height="400" />
+                    <canvas id="fieldCanvas2" width="550" height="400"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="robot3" class="tab-content" style="display: none;">

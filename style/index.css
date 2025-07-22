@@ -3,6 +3,8 @@ body {
     padding: 10px;
     margin: 5px;
     background-color: #f9f9f9;
+
+    padding-bottom: 62px;
 }
 
 .main-title {
@@ -173,7 +175,7 @@ ul {
     transition: transform 0.2s ease;
 }
 
-.yolo {
+/* .yolo {
     border: 2px solid #800020;
     border-radius: 10px;
     padding: 10px;
@@ -181,7 +183,51 @@ ul {
     background-color: #f9f9f9;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+} */
+
+.yolo {
+    border: 2px solid #800020;
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.1);
+    text-align: center;
+    font-family: sans-serif;
 }
+
+.yolo-status {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.yolo-label {
+    font-weight: bold;
+    font-size: 1em;
+    color: #333;
+}
+
+.yolo-flag {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background-color: #eee;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.yolo-flag.active {
+    background-color: #28a745;
+    color: white;
+}
+
+.yolo-flag.inactive {
+    background-color: #dc3545;
+    color: white;
+}
+
 
 .map-wrapper {
     position: relative;
@@ -212,6 +258,59 @@ ul {
     left: 0;
     pointer-events: none;
 }
+
+.bottom-container {
+    border: 2px solid #800020;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    max-width: 800px;        
+    margin-left: auto;       
+    margin-right: auto;     
+}
+
+#Walking1, #Walking2, #Walking3, #Walking4 {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.walking-panel {
+    max-width: 900px;
+    margin: 30px auto;
+    border: 2px solid #800020;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.15);
+    text-align: center;
+}
+
+.walking-panel h2 {
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+.walking-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.robot-coord {
+    font-size: 1em;
+    background-color: #f3f3f3;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    text-align: center;
+    min-width: 120px;
+}
+
 
 .site-footer {
     position: fixed;

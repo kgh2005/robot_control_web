@@ -41,6 +41,11 @@ robot1Listener.subscribe((message) => {
     ballX_1 = message.ball_x * 0.5;
     ballY_1 = message.ball_y * 0.5;
 
+    const ik_x = message.x;
+    const ik_y = message.y;
+
+    const ball_flag = message.ball_flag;
+
     if (tab_Id === 'Data-Integration') {
         draw();
     }
@@ -51,8 +56,23 @@ robot1Listener.subscribe((message) => {
     document.getElementById("orientation1").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
 
+    document.getElementById("Walking1").innerText = `X: ${ik_x.toFixed(1)}, Y: ${ik_y.toFixed(1)}`;
+
     updateYawDial1(yaw);
     updateYawOnCanvas1(yaw + 90);
+
+    const ballFlagElement = document.getElementById("ballFlag1");
+
+    if (ball_flag === 1) {
+        ballFlagElement.textContent = "Y";
+        ballFlagElement.classList.add("active");
+        ballFlagElement.classList.remove("inactive");
+    }
+    else {
+        ballFlagElement.textContent = "N";
+        ballFlagElement.classList.add("inactive");
+        ballFlagElement.classList.remove("active");
+    }
 });
 
 function updateYawDial1(yaw) {
@@ -128,6 +148,11 @@ robot2Listener.subscribe((message) => {
     ballX_2 = message.ball_x * 0.5;
     ballY_2 = message.ball_y * 0.5;
 
+    const ik_x = message.x;
+    const ik_y = message.y;
+
+    const ball_flag = message.ball_flag;
+
     if (tab_Id === 'Data-Integration') {
         draw();
     }
@@ -138,8 +163,23 @@ robot2Listener.subscribe((message) => {
     document.getElementById("orientation2").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
 
+    document.getElementById("Walking2").innerText = `X: ${message.x.toFixed(1)}, Y: ${message.y.toFixed(1)}`;
+
     updateYawDial2(yaw);
     updateYawOnCanvas2(yaw + 90);
+
+    const ballFlagElement = document.getElementById("ballFlag2");
+
+    if (ball_flag === 1) {
+        ballFlagElement.textContent = "Y";
+        ballFlagElement.classList.add("active");
+        ballFlagElement.classList.remove("inactive");
+    }
+    else {
+        ballFlagElement.textContent = "N";
+        ballFlagElement.classList.add("inactive");
+        ballFlagElement.classList.remove("active");
+    }
 });
 
 function updateYawDial2(yaw) {
@@ -215,6 +255,11 @@ robot3Listener.subscribe((message) => {
     ballX_3 = message.ball_x * 0.5;
     ballY_3 = message.ball_y * 0.5;
 
+    const ik_x = message.x;
+    const ik_y = message.y;
+
+    const ball_flag = message.ball_flag;
+
     if (tab_Id === 'Data-Integration') {
         draw();
     }
@@ -225,8 +270,23 @@ robot3Listener.subscribe((message) => {
     document.getElementById("orientation3").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
 
+    document.getElementById("Walking3").innerText = `X: ${message.x.toFixed(1)}, Y: ${message.y.toFixed(1)}`;
+
     updateYawDial3(yaw);
     updateYawOnCanvas3(yaw + 90);
+
+    const ballFlagElement = document.getElementById("ballFlag3");
+
+    if (ball_flag === 1) {
+        ballFlagElement.textContent = "Y";
+        ballFlagElement.classList.add("active");
+        ballFlagElement.classList.remove("inactive");
+    }
+    else {
+        ballFlagElement.textContent = "N";
+        ballFlagElement.classList.add("inactive");
+        ballFlagElement.classList.remove("active");
+    }
 });
 
 function updateYawDial3(yaw) {
@@ -302,6 +362,11 @@ robot4Listener.subscribe((message) => {
     ballX_4 = message.ball_x * 0.5;
     ballY_4 = message.ball_y * 0.5;
 
+    const ik_x = message.x;
+    const ik_y = message.y;
+
+    const ball_flag = message.ball_flag;
+
     if (tab_Id === 'Data-Integration') {
         draw();
     }
@@ -312,8 +377,24 @@ robot4Listener.subscribe((message) => {
     document.getElementById("orientation4").innerText =
         `Roll: ${roll.toFixed(1)}°, Pitch: ${pitch.toFixed(1)}°, Yaw: ${yaw.toFixed(1)}°`;
 
+    document.getElementById("Walking4").innerText = `X: ${message.x.toFixed(1)}, Y: ${message.y.toFixed(1)}`;
+
     updateYawDial4(yaw);
     updateYawOnCanvas4(yaw + 90);
+
+    const ballFlagElement = document.getElementById("ballFlag4");
+
+    if (ball_flag === 1) {
+        ballFlagElement.textContent = "Y";
+        ballFlagElement.classList.add("active");
+        ballFlagElement.classList.remove("inactive");
+    }
+    else {
+        ballFlagElement.textContent = "N";
+        ballFlagElement.classList.add("inactive");
+        ballFlagElement.classList.remove("active");
+    }
+
 });
 
 function updateYawDial4(yaw) {

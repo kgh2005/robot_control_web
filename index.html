@@ -38,6 +38,15 @@
                 <canvas id="fieldCanvas" width="550" height="400"></canvas>
             </div>
         </div>
+        <div class="walking-panel">
+            <h2>Walking</h2>
+            <div class="walking-row">
+                <div class="robot-coord">robot1 <span id="Walking1">X: ---, Y: ---</span></div>
+                <div class="robot-coord">robot2 <span id="Walking2">X: ---, Y: ---</span></div>
+                <div class="robot-coord">robot3 <span id="Walking3">X: ---, Y: ---</span></div>
+                <div class="robot-coord">robot4 <span id="Walking4">X: ---, Y: ---</span></div>
+            </div>
+        </div>
     </div>
 
     <!-- 1 번 로봇 -->
@@ -68,8 +77,10 @@
             </div>
             <div class="yolo">
                 <h2>YOLO 실시간</h2>
-                <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
-                <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+                <div class="yolo-status">
+                    <span class="yolo-label">Ball Detection</span>
+                    <span class="yolo-flag" id="ballFlag1">Y/N</span>
+                </div>
             </div>
 
             <!-- <div class="localization">
@@ -84,6 +95,12 @@
                 </div>
             </div>
         </div>
+
+        <div class="bottom-container">
+            <h2>Walking</h2>
+            <p id="Walking1">X: ---, Y: ---</p>
+        </div>
+
     </div>
 
     <!-- 2 번 로봇 -->
@@ -114,8 +131,10 @@
             </div>
             <div class="yolo">
                 <h2>YOLO 실시간</h2>
-                <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
-                <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+                <div class="yolo-status">
+                    <span class="yolo-label">Ball Detection</span>
+                    <span class="yolo-flag" id="ballFlag2">Y/N</span>
+                </div>
             </div>
 
             <!-- <div class="localization">
@@ -129,6 +148,10 @@
                     <canvas id="fieldCanvas2" width="550" height="400"></canvas>
                 </div>
             </div>
+        </div>
+        <div class="bottom-container">
+            <h2>Walking</h2>
+            <p id="Walking2">X: ---, Y: ---</p>
         </div>
     </div>
 
@@ -160,8 +183,10 @@
             </div>
             <div class="yolo">
                 <h2>YOLO 실시간</h2>
-                <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
-                <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+                <div class="yolo-status">
+                    <span class="yolo-label">Ball Detection</span>
+                    <span class="yolo-flag" id="ballFlag3">Y/N</span>
+                </div>
             </div>
 
             <!-- <div class="localization">
@@ -175,6 +200,10 @@
                     <canvas id="fieldCanvas3" width="550" height="400"></canvas>
                 </div>
             </div>
+        </div>
+        <div class="bottom-container">
+            <h2>Walking</h2>
+            <p id="Walking3">X: ---, Y: ---</p>
         </div>
     </div>
 
@@ -206,8 +235,10 @@
             </div>
             <div class="yolo">
                 <h2>YOLO 실시간</h2>
-                <!-- <img src="http://172.100.5.71:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" /> -->
-                <img src="http://localhost:8080/stream?topic=/yolo/image" style="max-width: 80%; height: auto;" />
+                <div class="yolo-status">
+                    <span class="yolo-label">Ball Detection</span>
+                    <span class="yolo-flag" id="ballFlag4">Y/N</span>
+                </div>
             </div>
 
             <!-- <div class="localization">
@@ -221,6 +252,10 @@
                     <canvas id="fieldCanvas4" width="550" height="400"></canvas>
                 </div>
             </div>
+        </div>
+        <div class="bottom-container">
+            <h2>Walking</h2>
+            <p id="Walking4">X: ---, Y: ---</p>
         </div>
     </div>
 

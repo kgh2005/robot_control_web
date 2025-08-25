@@ -21,7 +21,7 @@ let tab_Id = '';
 const robot1Listener = new ROSLIB.Topic({
     ros,
     name: "/robot1receiver",
-    messageType: "humanoid_interfaces/Robot1receiverMsg",
+    messageType: "web_control_bridge/Robot1receiverMsg",
 });
 
 let robotX_1 = 275;
@@ -93,7 +93,7 @@ function sendTestMessage1(setValue) {
     const publisher = new ROSLIB.Topic({
         ros: ros,
         name: "/robot1sender",
-        messageType: "humanoid_interfaces/Robot1senderMsg"
+        messageType: "web_control_bridge/Robot1senderMsg"
     });
 
     const msg = new ROSLIB.Message({ set: setValue });
@@ -128,7 +128,7 @@ function updateYawOnCanvas1(yawDeg) {
 const robot2Listener = new ROSLIB.Topic({
     ros,
     name: "/robot2receiver",
-    messageType: "humanoid_interfaces/Robot2receiverMsg",
+    messageType: "web_control_bridge/Robot2receiverMsg",
 });
 
 let robotX_2 = 275;
@@ -200,7 +200,7 @@ function sendTestMessage2(setValue) {
     const publisher = new ROSLIB.Topic({
         ros: ros,
         name: "/robot2sender",
-        messageType: "humanoid_interfaces/Robot2senderMsg"
+        messageType: "web_control_bridge/Robot2senderMsg"
     });
 
     const msg = new ROSLIB.Message({ set: setValue });
@@ -235,7 +235,7 @@ function updateYawOnCanvas2(yawDeg) {
 const robot3Listener = new ROSLIB.Topic({
     ros,
     name: "/robot3receiver",
-    messageType: "humanoid_interfaces/Robot3receiverMsg",
+    messageType: "web_control_bridge/Robot3receiverMsg",
 });
 
 let robotX_3 = 275;
@@ -307,7 +307,7 @@ function sendTestMessage3(setValue) {
     const publisher = new ROSLIB.Topic({
         ros: ros,
         name: "/robot3sender",
-        messageType: "humanoid_interfaces/Robot3senderMsg"
+        messageType: "web_control_bridge/Robot3senderMsg"
     });
 
     const msg = new ROSLIB.Message({ set: setValue });
@@ -342,7 +342,7 @@ function updateYawOnCanvas3(yawDeg) {
 const robot4Listener = new ROSLIB.Topic({
     ros,
     name: "/robot4receiver",
-    messageType: "humanoid_interfaces/Robot4receiverMsg",
+    messageType: "web_control_bridge/Robot4receiverMsg",
 });
 
 let robotX_4 = 275;
@@ -415,7 +415,7 @@ function sendTestMessage4(setValue) {
     const publisher = new ROSLIB.Topic({
         ros: ros,
         name: "/robot4sender",
-        messageType: "humanoid_interfaces/Robot4senderMsg"
+        messageType: "web_control_bridge/Robot4senderMsg"
     });
 
     const msg = new ROSLIB.Message({ set: setValue });

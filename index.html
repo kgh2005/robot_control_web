@@ -66,12 +66,16 @@
 
                 <div class="button-group">
                     <div class="button-row">
-                        <button onclick="sendTestMessage1(0)">SET Yaw</button>
+                        <button onclick="sendImuMessage1(0)">SET Yaw</button>
                     </div>
                     <div class="button-row">
-                        <button onclick="sendTestMessage1(-90)">SET -90</button>
-                        <button onclick="sendTestMessage1(180)">SET 180</button>
-                        <button onclick="sendTestMessage1(90)">SET +90</button>
+                        <button onclick="sendImuMessage1(-90)">SET -90</button>
+                        <button onclick="sendImuMessage1(180)">SET 180</button>
+                        <button onclick="sendImuMessage1(90)">SET +90</button>
+                    </div>
+                    <div class="button-row">
+                        <button id="imu-on1" onclick="ImuOnManager1()">ON</button>
+                        <button id="imu-off1" onclick="ImuOffManager1()">OFF</button>
                     </div>
                 </div>
             </div>
@@ -80,6 +84,12 @@
                 <div class="yolo-status">
                     <span class="yolo-label">Ball Detection</span>
                     <span class="yolo-flag" id="ballFlag1">Y/N</span>
+                </div>
+                <div class="button-group">
+                    <div class="button-row">
+                        <button id="yolo-on1" onclick="YoloOnManager1()">ON</button>
+                        <button id="yolo-off1" onclick="YoloOffManager1()">OFF</button>
+                    </div>
                 </div>
             </div>
 
@@ -127,6 +137,10 @@
                         <button onclick="sendTestMessage2(180)">SET 180</button>
                         <button onclick="sendTestMessage2(90)">SET +90</button>
                     </div>
+                    <div class="button-row">
+                        <button id="imu-on2" onclick="ImuOnManager2()">ON</button>
+                        <button id="imu-off2" onclick="ImuOffManager2()">OFF</button>
+                    </div>
                 </div>
             </div>
             <div class="yolo">
@@ -134,6 +148,12 @@
                 <div class="yolo-status">
                     <span class="yolo-label">Ball Detection</span>
                     <span class="yolo-flag" id="ballFlag2">Y/N</span>
+                </div>
+                <div class="button-group">
+                    <div class="button-row">
+                        <button id="yolo-on2" onclick="YoloOnManager2()">ON</button>
+                        <button id="yolo-off2" onclick="YoloOffManager2()">OFF</button>
+                    </div>
                 </div>
             </div>
 
@@ -179,6 +199,10 @@
                         <button onclick="sendTestMessage3(180)">SET 180</button>
                         <button onclick="sendTestMessage3(90)">SET +90</button>
                     </div>
+                    <div class="button-row">
+                        <button id="imu-on3" onclick="ImuOnManager3()">ON</button>
+                        <button id="imu-off3" onclick="ImuOffManager3()">OFF</button>
+                    </div>
                 </div>
             </div>
             <div class="yolo">
@@ -186,6 +210,12 @@
                 <div class="yolo-status">
                     <span class="yolo-label">Ball Detection</span>
                     <span class="yolo-flag" id="ballFlag3">Y/N</span>
+                </div>
+                <div class="button-group">
+                    <div class="button-row">
+                        <button id="yolo-on3" onclick="YoloOnManager3()">ON</button>
+                        <button id="yolo-off3" onclick="YoloOffManager3()">OFF</button>
+                    </div>
                 </div>
             </div>
 
@@ -231,6 +261,10 @@
                         <button onclick="sendTestMessage4(180)">SET 180</button>
                         <button onclick="sendTestMessage4(90)">SET +90</button>
                     </div>
+                    <div class="button-row">
+                        <button id="imu-on4" onclick="ImuOnManager4()">ON</button>
+                        <button id="imu-off4" onclick="ImuOffManager4()">OFF</button>
+                    </div>
                 </div>
             </div>
             <div class="yolo">
@@ -238,6 +272,12 @@
                 <div class="yolo-status">
                     <span class="yolo-label">Ball Detection</span>
                     <span class="yolo-flag" id="ballFlag4">Y/N</span>
+                </div>
+                <div class="button-group">
+                    <div class="button-row">
+                        <button id="yolo-on4" onclick="YoloOnManager4()">ON</button>
+                        <button id="yolo-off4" onclick="YoloOffManager4()">OFF</button>
+                    </div>
                 </div>
             </div>
 

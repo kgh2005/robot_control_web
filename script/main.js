@@ -30,6 +30,8 @@ let ballX_1 = 0;
 let ballY_1 = 0;
 let currentYaw_1 = 0;
 
+let imu_manager1 = 0;
+
 robot1Listener.subscribe((message) => {
     robot1 = message.robot1;
     const pitch = message.pitch;
@@ -89,15 +91,53 @@ function updateYawDial1(yaw) {
     }
 }
 
-function sendTestMessage1(setValue) {
-    const publisher = new ROSLIB.Topic({
-        ros: ros,
-        name: "/robot1sender",
-        messageType: "web_control_bridge/Robot1senderMsg"
-    });
+const publisher1 = new ROSLIB.Topic({
+    ros: ros,
+    name: "/robot1sender",
+    messageType: "web_control_bridge/Robot1senderMsg"
+});
 
-    const msg = new ROSLIB.Message({ set: setValue });
-    publisher.publish(msg);
+const DEFAULT1 = { imu: -1, vision: -1, set: -1 };
+
+// 부분 변경 → 상태 머지 → 전체 메시지 발행
+function publish1(partial) {
+    const msg = new ROSLIB.Message({ ...DEFAULT, ...partial });
+    publisher1.publish(msg);   // 상태 저장 자체가 없으니 리셋 불필요
+}
+
+// 버튼 핸들러
+const imu_on1 = document.getElementById('imu-on1');
+const imu_off1 = document.getElementById('imu-off1');
+
+function ImuOnManager1() {
+    imu_on1.classList.add('active-on');
+    imu_off1.classList.remove('active-off');
+    publish1({ imu: 1 });
+}
+
+function ImuOffManager1() {
+    imu_on1.classList.remove('active-on');
+    imu_off1.classList.add('active-off');
+    publish1({ imu: 0 });
+}
+
+const yolo_on1 = document.getElementById('yolo-on1');
+const yolo_off1 = document.getElementById('yolo-off1');
+
+function YoloOnManager1() {
+    yolo_on1.classList.add('active-on');
+    yolo_off1.classList.remove('active-off');
+    publish1({ vision: 1 });
+}
+
+function YoloOffManager1() {
+    yolo_on1.classList.remove('active-on');
+    yolo_off1.classList.add('active-off');
+    publish1({ vision: 0 });
+}
+
+function sendImuMessage1(setValue) {
+    publish1({ set: setValue });
 }
 
 const arrowLength1 = 15;
@@ -196,15 +236,53 @@ function updateYawDial2(yaw) {
     }
 }
 
-function sendTestMessage2(setValue) {
-    const publisher = new ROSLIB.Topic({
-        ros: ros,
-        name: "/robot2sender",
-        messageType: "web_control_bridge/Robot2senderMsg"
-    });
+const publisher2 = new ROSLIB.Topic({
+    ros: ros,
+    name: "/robot2sender",
+    messageType: "web_control_bridge/Robot2senderMsg"
+});
 
-    const msg = new ROSLIB.Message({ set: setValue });
-    publisher.publish(msg);
+const DEFAULT2 = { imu: -1, vision: -1, set: -1 };
+
+// 부분 변경 → 상태 머지 → 전체 메시지 발행
+function publish2(partial) {
+    const msg = new ROSLIB.Message({ ...DEFAULT, ...partial });
+    publisher2.publish(msg);   // 상태 저장 자체가 없으니 리셋 불필요
+}
+
+// 버튼 핸들러
+const imu_on2 = document.getElementById('imu-on2');
+const imu_off2 = document.getElementById('imu-off2');
+
+function ImuOnManager2() {
+    imu_on2.classList.add('active-on');
+    imu_off2.classList.remove('active-off');
+    publish2({ imu: 1 });
+}
+
+function ImuOffManager2() {
+    imu_on2.classList.remove('active-on');
+    imu_off2.classList.add('active-off');
+    publish2({ imu: 0 });
+}
+
+const yolo_on2 = document.getElementById('yolo-on2');
+const yolo_off2 = document.getElementById('yolo-off2');
+
+function YoloOnManager2() {
+    yolo_on2.classList.add('active-on');
+    yolo_off2.classList.remove('active-off');
+    publish2({ vision: 1 });
+}
+
+function YoloOffManager2() {
+    yolo_on2.classList.remove('active-on');
+    yolo_off2.classList.add('active-off');
+    publish2({ vision: 0 });
+}
+
+function sendImuMessage2(setValue) {
+    publish2({ set: setValue });
 }
 
 const arrowLength2 = 15;
@@ -303,15 +381,53 @@ function updateYawDial3(yaw) {
     }
 }
 
-function sendTestMessage3(setValue) {
-    const publisher = new ROSLIB.Topic({
-        ros: ros,
-        name: "/robot3sender",
-        messageType: "web_control_bridge/Robot3senderMsg"
-    });
+const publisher3 = new ROSLIB.Topic({
+    ros: ros,
+    name: "/robot3sender",
+    messageType: "web_control_bridge/Robot3senderMsg"
+});
 
-    const msg = new ROSLIB.Message({ set: setValue });
-    publisher.publish(msg);
+const DEFAULT3 = { imu: -1, vision: -1, set: -1 };
+
+// 부분 변경 → 상태 머지 → 전체 메시지 발행
+function publish3(partial) {
+    const msg = new ROSLIB.Message({ ...DEFAULT, ...partial });
+    publisher3.publish(msg);   // 상태 저장 자체가 없으니 리셋 불필요
+}
+
+// 버튼 핸들러
+const imu_on3 = document.getElementById('imu-on3');
+const imu_off3 = document.getElementById('imu-off3');
+
+function ImuOnManager3() {
+    imu_on3.classList.add('active-on');
+    imu_off3.classList.remove('active-off');
+    publish2({ imu: 1 });
+}
+
+function ImuOffManager3() {
+    imu_on3.classList.remove('active-on');
+    imu_off3.classList.add('active-off');
+    publish2({ imu: 0 });
+}
+
+const yolo_on3 = document.getElementById('yolo-on3');
+const yolo_off3 = document.getElementById('yolo-off3');
+
+function YoloOnManager3() {
+    yolo_on3.classList.add('active-on');
+    yolo_off3.classList.remove('active-off');
+    publish3({ vision: 1 });
+}
+
+function YoloOffManager3() {
+    yolo_on3.classList.remove('active-on');
+    yolo_off3.classList.add('active-off');
+    publish3({ vision: 0 });
+}
+
+function sendImuMessage3(setValue) {
+    publish3({ set: setValue });
 }
 
 const arrowLength3 = 15;
@@ -411,15 +527,53 @@ function updateYawDial4(yaw) {
     }
 }
 
-function sendTestMessage4(setValue) {
-    const publisher = new ROSLIB.Topic({
-        ros: ros,
-        name: "/robot4sender",
-        messageType: "web_control_bridge/Robot4senderMsg"
-    });
+const publisher4 = new ROSLIB.Topic({
+    ros: ros,
+    name: "/robot4sender",
+    messageType: "web_control_bridge/Robot4senderMsg"
+});
 
-    const msg = new ROSLIB.Message({ set: setValue });
-    publisher.publish(msg);
+const DEFAULT4 = { imu: -1, vision: -1, set: -1 };
+
+// 부분 변경 → 상태 머지 → 전체 메시지 발행
+function publish4(partial) {
+    const msg = new ROSLIB.Message({ ...DEFAULT, ...partial });
+    publisher4.publish(msg);   // 상태 저장 자체가 없으니 리셋 불필요
+}
+
+// 버튼 핸들러
+const imu_on4 = document.getElementById('imu-on4');
+const imu_off4 = document.getElementById('imu-off4');
+
+function ImuOnManager4() {
+    imu_on4.classList.add('active-on');
+    imu_off4.classList.remove('active-off');
+    publish4({ imu: 1 });
+}
+
+function ImuOffManager4() {
+    imu_on4.classList.remove('active-on');
+    imu_off4.classList.add('active-off');
+    publish4({ imu: 0 });
+}
+
+const yolo_on4 = document.getElementById('yolo-on4');
+const yolo_off4 = document.getElementById('yolo-off4');
+
+function YoloOnManager4() {
+    yolo_on4.classList.add('active-on');
+    yolo_off4.classList.remove('active-off');
+    publish4({ vision: 1 });
+}
+
+function YoloOffManager4() {
+    yolo_on4.classList.remove('active-on');
+    yolo_off4.classList.add('active-off');
+    publish4({ vision: 0 });
+}
+
+function sendImuMessage4(setValue) {
+    publish4({ set: setValue });
 }
 
 const arrowLength4 = 15;

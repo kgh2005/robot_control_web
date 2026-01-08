@@ -101,7 +101,7 @@ const DEFAULT1 = { imu: -1, vision: -1, set: -1 };
 
 // 부분 변경 → 상태 머지 → 전체 메시지 발행
 function publish1(partial) {
-    const msg = new ROSLIB.Message({ ...DEFAULT, ...partial });
+    const msg = new ROSLIB.Message({ ...DEFAULT1, ...partial });
     publisher1.publish(msg);   // 상태 저장 자체가 없으니 리셋 불필요
 }
 
@@ -246,7 +246,7 @@ const DEFAULT2 = { imu: -1, vision: -1, set: -1 };
 
 // 부분 변경 → 상태 머지 → 전체 메시지 발행
 function publish2(partial) {
-    const msg = new ROSLIB.Message({ ...DEFAULT, ...partial });
+    const msg = new ROSLIB.Message({ ...DEFAULT2, ...partial });
     publisher2.publish(msg);   // 상태 저장 자체가 없으니 리셋 불필요
 }
 
@@ -391,7 +391,7 @@ const DEFAULT3 = { imu: -1, vision: -1, set: -1 };
 
 // 부분 변경 → 상태 머지 → 전체 메시지 발행
 function publish3(partial) {
-    const msg = new ROSLIB.Message({ ...DEFAULT, ...partial });
+    const msg = new ROSLIB.Message({ ...DEFAULT3, ...partial });
     publisher3.publish(msg);   // 상태 저장 자체가 없으니 리셋 불필요
 }
 
@@ -537,7 +537,7 @@ const DEFAULT4 = { imu: -1, vision: -1, set: -1 };
 
 // 부분 변경 → 상태 머지 → 전체 메시지 발행
 function publish4(partial) {
-    const msg = new ROSLIB.Message({ ...DEFAULT, ...partial });
+    const msg = new ROSLIB.Message({ ...DEFAULT4, ...partial });
     publisher4.publish(msg);   // 상태 저장 자체가 없으니 리셋 불필요
 }
 
